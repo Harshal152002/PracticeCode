@@ -1,0 +1,24 @@
+version: '3.9'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - 80:80
+  app:
+    image: myapp:latest
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: myapp
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: password
+
+
+
+
+Save the above YAML content to a file named docker-compose.yml, and then you can use the docker-compose up command to start all the services defined in the Docker Compose file.
