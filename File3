@@ -1,0 +1,45 @@
+docker pull sonarqube
+docker run -d -p 9000:9000 -p 9092:9092 --name sonarqube sonarqube
+
+
+
+
+a. YAML manifest for a simple Pod with a single container:
+
+yaml
+Copy code
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+  - name: my-container
+    image: my-image:tag
+    
+Replace my-pod with the desired name for your Pod and my-image:tag with the image and tag you want to use for the container.
+
+b. To deploy the Pod to a Kubernetes cluster using kubectl apply:
+
+Save the YAML manifest to a file, for example, pod.yaml.
+Open your terminal or command prompt.
+Navigate to the directory where the pod.yaml file is located.
+Run the command kubectl apply -f pod.yaml to create the Pod using the manifest.
+Kubernetes will create the Pod based on the provided configuration.
+c. To verify that the Pod is running using kubectl get pods:
+
+Run the command kubectl get pods to see a list of all the Pods in the cluster.
+Look for the Pod with the name you specified in the manifest (e.g., my-pod).
+Check the STATUS column to see if the Pod is running or any other relevant information.
+
+
+
+
+
+
+
+
+
+kubectl config get-contexts
+kubectl config set-context minikube1 --cluster=minikube --user=minikube
+kubectl config use-context <context-name>
