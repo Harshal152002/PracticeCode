@@ -15,7 +15,6 @@ git merge <source-branch>
 
 
 
-
 git clone <repository-url>
 git checkout -b <new-branch-name>
 git add
@@ -29,3 +28,61 @@ git commit
 git log (noting its commit hash)
 git tag <tag-name> <commit-hash>
 git revert <commit-hash>
+
+
+
+
+
+
+
+
+Set up a remote repository on GitHub and add it as a remote in your local repository:
+
+Create a new repository on GitHub.
+Copy the repository's URL.
+Open your terminal or command prompt.
+Navigate to your local repository.
+Run the command git remote add origin <repository-url> to add the GitHub repository as a remote in your local repository.
+b. Create a pull request on GitHub and review changes:
+
+Push your local changes to the remote repository: git push origin <branch-name>.
+Go to your GitHub repository and navigate to the "Pull requests" tab.
+Click on the "New pull request" button.
+Select the branch you want to merge into the base branch.
+Review the changes, add a description, and click on "Create pull request" to create the pull request.
+Reviewers can then provide comments, suggestions, and approve the changes before merging.
+c. Tag a specific commit:
+
+Identify the commit hash using git log or git show command.
+Run the command git tag <tag-name> <commit-hash> to create a tag for the specific commit.
+For example, git tag v1.0.0 abcdef123456 creates a tag named "v1.0.0" for the commit with the hash "abcdef123456".
+Push the tag to the remote repository using git push origin <tag-name>.
+d. Revert a specific commit:
+
+Identify the commit hash using git log or git show command.
+Run the command git revert <commit-hash> to create a new commit that undoes the changes introduced by the specific commit.
+For example, git revert abcdef123456 creates a new commit that reverts the changes in the commit with the hash "abcdef123456".
+Push the changes to the remote repository using git push origin <branch-name>.
+e. Squash multiple commits into one:
+
+Identify the number of commits you want to squash using git log or git show command.
+Run the command git rebase -i HEAD~<number-of-commits> to start an interactive rebase session.
+In the interactive rebase window, replace "pick" with "squash" or "s" for the commits you want to squash.
+Save and close the rebase window.
+In the subsequent window, modify the commit message as desired for the new squashed commit.
+Save and close the file.
+Push the changes to the remote repository using git push origin <branch-name> --force.
+f. Show commit history:
+
+Run the command git log to display the commit history for the current branch.
+This command will show the commit hash, author, date, and commit message for each commit.
+You can use various options with git log to customize the output, such as limiting the number of commits, displaying a compact summary, or filtering by author or date.
+Remember to adapt the commands and branch names based on your specific repository and branch setup.
+
+
+
+
+
+
+
+
