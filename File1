@@ -1,0 +1,31 @@
+git init
+git add <file> or git add .
+git commit -m "Commit message
+git branch <new-branch-name>
+git checkout <branch-name>
+git merge <source-branch>
+
+
+
+
+
+
+
+
+
+
+
+
+git clone <repository-url>
+git checkout -b <new-branch-name>
+git add
+git commit
+git push origin <new-branch-name>
+git pull origin <branch-name>
+Make changes in conflict files
+
+git add <file>
+git commit
+git log (noting its commit hash)
+git tag <tag-name> <commit-hash>
+git revert <commit-hash>
